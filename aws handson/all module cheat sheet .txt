@@ -1,0 +1,27 @@
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+EFS - elastic file store                           # note - efs service not supported by windows ec2 , for windows fsx service used
+
+steps - 
+efs steps :-  create efs ---> add 'mount target' while creating efs
+              efs-security group - add nfs rule 
+              go to console --> select created efs --> attach --> copy " Using the NFS client: " command and paste in all ec2 
+        
+        
+ec2 steps :-    install required ec2 in which we want to attach efs 
+                in ec2-security group - add nfs rule
+                install 'nfs' in ec2 
+                create common folder for efs
+                
+command to check efs attach or not
+# df -h 
+
+command for installing nfs on different ec2 :-
+
+ubuntu -       sudo apt install nfs-common
+
+amazon linux - sudo yum -y install nfs-utils
+
+redhat -        sudo yum -y install nfs-utils
+
+-------------------------------------------------------------------------------------------------------------------------------------------       
