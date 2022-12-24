@@ -25,3 +25,25 @@ amazon linux - sudo yum -y install nfs-utils
 redhat -        sudo yum -y install nfs-utils
 
 -------------------------------------------------------------------------------------------------------------------------------------------       
+
+
+Elastic load balancer:
+
+classic load balancer - this is old one with limited functionality - 
+
+  steps to create load balancer : 
+      --> create load Balancers :
+            - Create an internal load balancer - if not enabled -: means lb is public
+                                                 if enabled --: means lb is not public 
+                                                 
+            - add list of ec2 : select here list of ec2 on which we want to distribute load
+            - add security group with - http and https rule 
+  
+  
+  
+Application Load Balancer :
+
+
+            
+            
+      
