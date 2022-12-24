@@ -43,7 +43,18 @@ classic load balancer - this is old one with limited functionality -
   
 Application Load Balancer :
 
+ steps - create load balancer :-
+                - internet facing - used to access from internet /public access
+                - internal - use to private access
+                
+                - select awailability zones in which ec2 are created           # note- for appln lb creation at least 2 az should be selected.
+                - select security groups 
+                
+         ****   - add target group :-                                                # note for appln lb and network lb target group needed
 
+  step for target group creation :- 
+                - 
+                
             
             
       
