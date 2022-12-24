@@ -53,7 +53,8 @@ Application Load Balancer :
          ****   - add target group :-                                                # note for appln lb and network lb target group needed
 
   step for target group creation :- 
-                - 
+                - choose target type - instance 
+                - register targets - select list of ec2 for which we want to make a group 
                 
             
             
