@@ -57,5 +57,135 @@ Application Load Balancer :
                 - register targets - select list of ec2 for which we want to make a group 
                 
             
+           
+ --------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ AUTO SCALING GROUP 
+                   
+  asg creation steps - follow sequence while creating 
+  
+              1. AMI 
+              2. Launch configuration or launch template -                  # in template we define os , instance type , ebs for server while auto scaling
+              3. load balancer
+              4. start creating asg
+              5. cloud watch alarm
+              6. scaling policy for asg
+              
+      
+   Auto scaling group creation 
+    step 1 :- 
+        - select launch configuration 
+        - select availability zone                                                         # az in which we want to add server while autoscaling
+        - select Load balancer
+        - *** group size -: 
+                  - desired capacity                                                         # what are normal or average no of servers we want
+                  - minimum capacity                                                         # min servers we want below this no server will remove 
+                  - maximum capacity                                                         # maximum servers we want beyond this no server will add
             
+            
+    step 2 :- *** create policies                                                          # policies - in this we define actually when should add or remove server
+    
+    --> cloudwatch alarm creation --:
+                              - create cloudwatch alarm --> select metric --> serch :- cpu --> ec2-by auto-scaling group --> select asg with cpu utilization metric
+                              - conditions -: specifiy threshold /cpu utilization % and greater than , less than 
+                              
+    
+    --> go to asg --> select created asg --> automatic scaling --> Dynamic scaling policies --> 
+          - --> create dynamic policies --> step scaling --:
+                                                      - choose cloud watch alarm 
+                                                      - take a action - add :1                    # here we define add 1 server after alarm triggers
+    
+              
+         
+                
+          
+   Launch configuration creation 
+        - Select AMI , instance type ,  keypair , security group --> create 
+        
+  
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
       
