@@ -155,7 +155,17 @@ Application Load Balancer :
  ------------------------------------------------------------------------------------------------------------------------------------------------------------------
         
  
+ VPC - Virtual Private Cloud
  
+ steps -:
+      - create vpc :- choose cidr for vpc
+      - create subnets :- divide cidr among the subnets
+      - create gateway - 
+              - for public subnet - internet gate way , 
+              - for private subnet - NAT gateway -: here we select public subnet which provide internet to private gateway
+      - Route table -
+            - create public route table - associate public subnet , route = 0.0.0.0/0 to internete Gateway
+            - create private route table - associal private subnet , route = 0.0.0.0/0 to NAT Gateway
  
  
  
