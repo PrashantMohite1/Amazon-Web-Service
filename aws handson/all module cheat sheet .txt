@@ -103,12 +103,57 @@ Application Load Balancer :
         - Select AMI , instance type ,  keypair , security group --> create 
         
   
-  ---------------------------------------------------------------------------------------------------------------------------------------------------------
+ ---------------------------------------------------------------------------------------------------------------------------------------------------------
  
  
+ ROUTE - 53 
+ 
+ steps -: to route traffic to single ec2
+    
+    step 1 :- 
+      - create hosted zone for our dns 
+      - change the default nameservers of dns 
+                    -->  go to freenom --> service --> manage domains --> then our dns list comes --> manage domains 
+                         ---> management tools --> name servers --> use custom name server --: paste here name server of created hosted zones
+      
+    step 2 :   
+     - add record - : 
+             - record name - www or subdomain names                                      # ex - www.images.prashantm.com    here "www.images" is subdomain
+             - in that mention ip of ec2
+             - select record type :  "A" and choose routing policies - simple
+     
+     
+     
+     
+ steps to route traffic to load balancer :
+        - create hosted zone for our dns 
+        - add record :-
+               - select record type :- A and 
+               - alias - yes , and select dns name of load balancer
+               - choose routing policy 
+               
+               
+               
+              
+ routing policies :-  simple , failover , latency based , weighted 
+ 
+      1 - simple routing -: 
+              - create record for simple routing
+              
+      2 - failover routing - :
+              - create health check for primary and secondory instance :
+                      - want to monitor - select endpoint 
+                      - ip of ec2 
+                      
+              - create record - 1st for primary instance - mention heath check of it , failover record type = primary
+                              - 2nd for secondary instance- mention health check of secondary instance , failover record type = secondary
+               
+              - testing :- type domain name on browser , see primary instance web page comes or not, 
+                           then stop primary instance then secondary ec2 web page comes or not
  
  
- 
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        
  
  
  
