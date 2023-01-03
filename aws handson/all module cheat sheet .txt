@@ -166,6 +166,35 @@ Application Load Balancer :
       - Route table -
             - create public route table - associate public subnet , route = 0.0.0.0/0 to internete Gateway
             - create private route table - associal private subnet , route = 0.0.0.0/0 to NAT Gateway
+            
+            
+ -----------------------------------------------------------------------------------------------------------------------------------------------        
+  
+PRIVATE EC2 CREATION AND LOGGING IN IT VIA PUBLIC EC2 :-
+
+step1 - 	create VPC 
+
+step 2 -	create public and private subnet 
+
+step3 - 	varil subnet la actually public and private banva
+
+		a - create internet gateway  
+		b - create nat gateway - 	hyamadhe only *public subnet add kara
+					
+					note - becoz apan public subnet kadun internet ghenar ani private subnet la denar ( pizza - brother - quarentine example)
+	
+		c - create public route table -  hyat subnet association madhe - public subnets add kara
+		d- create private route table	- hyat subnet association madhe - private subnets add kara
+    
+
+steps for logging in private instance -
+                                           
+				- 1st login in public-ec2 
+				- create file with keypair of pvt ec2 with .pem extension --------> then paste content of private server keypair ---> save it 
+        - *** sudo chmod 400 <key-pair of private server >
+        - enter the ssh command for private ec2
+
+
  
  ------------------------------------------------------------------------------------------------------------------------------------------------------
  
@@ -203,7 +232,7 @@ Application Load Balancer :
             - go to oregon region ---> route tables of private ec2 --> destination :- < cidr vpc -1 >           target -: < vpc peering connection id >
             
                                                          
- 
+ ---------------------------------------------------------------------------------------------------------------------------------------------------------------
  
  
  
