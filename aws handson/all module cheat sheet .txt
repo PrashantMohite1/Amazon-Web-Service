@@ -1,4 +1,23 @@
 
+
+
+
+SECURITY GROUP :- 
+
+HOW TO ALLOW TRAFFIC FROM SPECIFIC 2 ec2s IPS ONLY 
+
+    --> inbound --:
+	rule 1 -:  type - ssh  , source - custom : < enter ip of any ec2- 1 > /32 	      # note - in cidr /32 means only 1 host will create hence we choose /32
+	rule 1 -: type - ssh  , source - custom : < enter ip of any ec2- 2 > /32 
+		
+											
+											
+											
+	
+
+
+
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 EFS - elastic file store                           # note - efs service not supported by windows ec2 , for windows fsx service used
 
