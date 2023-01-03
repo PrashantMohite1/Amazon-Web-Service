@@ -79,8 +79,8 @@ Application Load Balancer :
         - select Load balancer
         - *** group size -: 
                   - desired capacity                                                         # what are normal or average no of servers we want
-                  - minimum capacity                                                         # min servers we want below this no server will remove 
-                  - maximum capacity                                                         # maximum servers we want beyond this no server will add
+                  - minimum capacity                                                         # min servers we want below this no of server will remove 
+                  - maximum capacity                                                         # maximum servers we want beyond this no of server will add
             
             
     step 2 :- *** create policies                                                          # policies - in this we define actually when should add or remove server
@@ -167,15 +167,42 @@ Application Load Balancer :
             - create public route table - associate public subnet , route = 0.0.0.0/0 to internete Gateway
             - create private route table - associal private subnet , route = 0.0.0.0/0 to NAT Gateway
  
+ ------------------------------------------------------------------------------------------------------------------------------------------------------
  
+ VPC PEERING -
  
+ imp note - for conncting two vpc by peering connection then these two vpc have different cidr notation 
+ same cidr notation vpc will failed to peer
  
- VPC PEERING - pending
+ task - Nvirginia region - vpc-1 ----> 1 public ec2
+        oregon region - vpc-2 ---> 1 private ec2  
+        
+        we want to access private ec2 of vpc-2 on public ec2 of vpc-1 
+        for that we want to make vpc peering connection of Nvirginia region - vpc-1  and oregon region - vpc-2
  
+ vpc_peering steps -:
  
+        step 1 :-
+          - go to vpc --> peering connections --> 
+          --->  create peering connection :
+                  -  vpc requester -: jya vpc varti aplyala dusra vpc connect karaychay to vpc                          # in above task vpc-1 is requester
+                  -  vpc accepter - : jo pan vpc aplyala access karaychay to vpc                                        # in above task vpc-2 is accepter
+                  - create --> ok 
+                 
+        step 2 :- accept request from accepter vpc                                            # in above task vpc-2 is accepter then go to oregon region 
+           - go to vpc --> peering connections --> 
+            --->  create peering connection : 
+                           - select created peering connection --> actions --> accept request 
  
- 
- 
+ steps for accessing private ec2 of vpc-2 on public ec2 of vpc-1 
+          
+          step 1 :- edit route table of of Nvirgina vpc-1 
+            - go to N-virginia reqion --> route table of public ec2 --> destination :- < cidr of vpc-2 >         target -: < vpc peering connection id >
+                                                                  
+          step 2 :- 
+            - go to oregon region ---> route tables of private ec2 --> destination :- < cidr vpc -1 >           target -: < vpc peering connection id >
+            
+                                                         
  
  
  
