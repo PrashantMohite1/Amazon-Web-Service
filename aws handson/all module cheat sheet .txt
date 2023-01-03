@@ -189,8 +189,8 @@ step3 - 	varil subnet la actually public and private banva
 
 steps for logging in private instance -
                                            
-				- 1st login in public-ec2 
-				- create file with keypair of pvt ec2 with .pem extension --------> then paste content of private server keypair ---> save it 
+	- 1st login in public-ec2 
+	- create file with keypair of pvt ec2 with .pem extension --------> then paste content of private server keypair ---> save it 
         - *** sudo chmod 400 <key-pair of private server >
         - enter the ssh command for private ec2
 
@@ -223,13 +223,21 @@ steps for logging in private instance -
             --->  create peering connection : 
                            - select created peering connection --> actions --> accept request 
  
- steps for accessing private ec2 of vpc-2 on public ec2 of vpc-1 
+steps for accessing private ec2 of vpc-2 on public ec2 of vpc-1 
           
           step 1 :- edit route table of of Nvirgina vpc-1 
             - go to N-virginia reqion --> route table of public ec2 --> destination :- < cidr of vpc-2 >         target -: < vpc peering connection id >
                                                                   
           step 2 :- 
             - go to oregon region ---> route tables of private ec2 --> destination :- < cidr vpc -1 >           target -: < vpc peering connection id >
+	    
+	    
+steps for logging in private instance -
+                                           
+	- 1st login in public-ec2 
+	- create file with keypair of pvt ec2 with .pem extension --------> then paste content of private server keypair ---> save it 
+        - *** sudo chmod 400 <key-pair of private server >
+        - enter the ssh command for private ec2
             
                                                          
  ---------------------------------------------------------------------------------------------------------------------------------------------------------------
