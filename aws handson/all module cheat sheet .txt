@@ -261,7 +261,40 @@ steps for logging in private instance -
                                                          
  ---------------------------------------------------------------------------------------------------------------------------------------------------------------
  
+ VPC ENDPOINT - :
  
+ two types of endpoint - 
+ 	1. gateway endpoint 
+		- supports only s3 and dynamodb service , it used
+		- it uses route table to connect vpc to services s3 and dynamodb
+	2. interface endpoint 
+		- it support upto 17 service 
+		- it uses private link to connect vpc to service
+
+steps for creating gateway endpoint :- 
+	--> go to vpc --> endpoints --> create endpoint --> select aws services --> search : choose s3 with type gateway --> select our vpc --> 
+	--> select private subnet - becoz from gateway endpoint we can communicate with s3 offline without NAT gateway
+	--> create endpoint 
+	
+step to create access key and secret key 
+          - go to aws console --> click on your name --> security credential --> access keys --> create new access key 
+	   
+	
+cli steps for operating s3 from private instance without NAT gateway :- 
+        - logging 1st in public instance 
+	- upload key-pair.pem of private instance 
+	- chmod 400 <.pem of pvt ec2 > 
+	- ssh -i command for pvt instance --> then you successfully logged in pvt ec2 :
+	           - run some below command to check we are able to work with s3 or not 
+		   - sudo su - 
+		   - *** aws configure --> enter access key and secret key                        # note aws configure is only work if 'awscli' is installed in ec2 
+		   - aws s3 ls 
+		   - aws s3 mb s3://<name of bucket>
+		   - then upload some file in created bucket from s3 console
+		   - aws s3 ls s3://<name of bucket>
+		   
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------		
+      
  
  
  
