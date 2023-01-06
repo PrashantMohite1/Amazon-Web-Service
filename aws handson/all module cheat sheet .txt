@@ -1,4 +1,15 @@
 
+NACL SECURITY - for adding security for subnet , here explicit deny is awailable
+
+  steps to create nacl 
+    - go to vpc --> security -: network acl's --> create network acl --> select vpc --> create
+    - add allow and deny rules in inbound and outbound
+    - select created nacl --> associate subnet 
+    
+    
+    when NACL is beneficial - :
+     let say when we have 100 server in 'us-east-1' subnet and these 100 severs have different security groups and now 
+     we want to add some allow rules on these server then changing 100 servers security group is time consuming then we NACL
 
 
 
