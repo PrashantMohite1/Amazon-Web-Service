@@ -320,11 +320,38 @@ cli steps for operating s3 from private instance without NAT gateway :-
       
  
  
- read replica -: 
+ read replica creation steps :- 
  
- 
- 
- 
+      - select created database --> actions --> add reader - : use to create replica in same region in which db created 
+                                            --> create cross-region read replica - : for creating across different regions
+      
+      
+     steps to create read replica in same region of db created :-
+                   -  select created database --> actions --> add reader :
+		   - instance type - : choose small becoz we use for reading purpose only 
+		   - connectivity - publically accessible  : to login in our pc
+		   
+		   
+     steps to create read replica of amazon aurora in different regions :-
+     
+            - step 1 : - enable bin logs of db
+		  A 
+		      - go to database console ---> parameter groups  --> create parameter group :
+		      - give name 
+		      - type : select DB Cluster Parameter Group 
+		  B
+		   - go to go to database console --> parameter groups --> select created parameter group --> search : binlog_formate --> edit value - MIXED -->save                      - go to our created database --> select our database --> modify --> DB cluster group -: select here created parameter Group --> continue 
+		   
+          
+	 
+		   
+           - step 2 : - 
+		 - select created database --> actions --> create cross-region read replica : 
+		 - destination region - select region based on read replica facility exist in that region or not 
+		        - go to selected region 
+			- go databases console --> subnet group --> create subnet group --> it is simple like ec2
+		- Publically accessible - : yes - for accessing it from our pc 
+       
  
  
  
