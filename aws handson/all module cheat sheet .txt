@@ -306,6 +306,21 @@ cli steps for operating s3 from private instance without NAT gateway :-
 		   
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------		
       
+ databases :- prefer the handwritten notes 
+ 
+ aws documentation - https://aws.amazon.com/getting-started/hands-on/create-mariadb-db/
+ 
+ steps to create rds databases :- 
+    - select database engine
+    - template - select  : production / dev / free tier 
+    - create username and password 
+    - instance configuration , select storage  - is like selecting instance type and storage 
+    - availability - single / multi-az / multi-az db cluster
+    - *** imp   Pulbic access : yes - to access from our pc 
+      
+ 
+ 
+ read replica -: 
  
  
  
@@ -313,11 +328,7 @@ cli steps for operating s3 from private instance without NAT gateway :-
  
  
  
- 
- 
- 
- 
- 
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
  
  
  
