@@ -357,10 +357,18 @@ cli steps for operating s3 from private instance without NAT gateway :-
  
  ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
  
+ AWS CLOUDFORMATION 
+ 
+ steps - 
+    - create jason file template with and upload to s3                                          # template - madhe aapn json formate madhe resources specify karto
+    - go to cloudformation console --> create stack --> upload template from s3 --> done
+    
+ 
+aws cloudformation official documentation - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/AWS_EC2.html
  
  
  
- 
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------
  
  
  
