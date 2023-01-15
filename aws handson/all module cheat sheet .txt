@@ -395,7 +395,21 @@ Dashboard - hya thikani apan specific metric sathi chart banvu shakto jyane tya 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 SQS - SIMPLE QUEUE SERVICE - 
-lect- 19-8-22 and 23-8-22
+Queue is for holding message , Queue is not for deliver message thats why consumer server need to poll the message 
+
+imp terms while creating queue
+   - message retention perion - ex- 1 min :- means message will remain in queue for 1 min  if server is unhealthy if cant poll this message within 1 min then it will 						   deleted from queue
+   
+   - Visibility Timeout - jya veli server 1 message recieve karel tya veli to message other server la unvisible specified time paryant 
+   
+   - Dead Letter Queue - there are some message that are not able to consume by reciever server then these message stored in Dead letter Queue
+   
+   
+   steps to create Queue - 
+   	- go to sqs console --> create queue :
+	- specify message retention perion , Visibility Timeout and create queue 
+	- then go inside created queue --> send and recieve message - type message --> 
+	- poll message from queue 
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
