@@ -273,6 +273,7 @@ steps for logging in private instance -
  ---------------------------------------------------------------------------------------------------------------------------------------------------------------
  
  VPC ENDPOINT - :
+ use to communicate with aws services like s3, dynamodb , and many others without internet which reduces cost.
  
  two types of endpoint - 
  	1. gateway endpoint 
