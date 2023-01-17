@@ -482,7 +482,18 @@ Step to deploy application using beanstalk
 	    - --> go previous from configure more configuration --> create application.
 	 
 	    
-	   
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+OPSWORKS 
+
+STEPS TO CREATE STACK 
+
+    - step 1 -: create role for opswork with opsworks full access policy 
+    	- go to IAM console --> Roles --> create role --> choose service to view use case : select opswork  --> next 
+	- --> attach AWSOpsWorks_FullAccess policy --> next --> enter role name and create role
+	
+	
+	
 	   
 	   
 	   
