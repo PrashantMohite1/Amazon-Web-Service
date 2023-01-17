@@ -395,6 +395,56 @@ ex- cpuuitilization , diskreadbyte , diskwritebyte.
 
 Dashboard - hya thikani apan specific metric sathi chart banvu shakto jyane tya metric la monitor karne simple hoel
 
+
+sending appln logs to cloudwatch :-
+
+first lanched 1 ec2 instance --> install apache on it --> 
+
+step to send apache 2 logs to aws cloudwatch 
+
+  	step1 - create policy and role for aws agent 
+          	create policy with belowed action 
+		  statement :[
+			{ 
+				"effect" = "allow"
+				"actions" = [
+					"logs:CreateLogGroup"
+					"logs:CreateLogStream"
+					"logs:PutLogEvents"
+					"logs:DescribeLogStream"  ]
+				"resource": "arn:aws:logs:*:*:*"
+		    create policy with above mention actions 
+
+
+
+		- create a role :-
+			iam console --> roles --> create roles --> attach - above created policy 
+								    s3 full access 
+
+	step 3 - install aws agent and cofiguration of logs file and agent files
+
+		- sudo yum update 
+		- sudo yum install -y awslogs
+		- vi /etc/awslogs/awscli.conf --> change region = we want 
+		- sudo vi /etc/awslogs/awslogs.conf
+			- [ /var/log/httpd/access_log/
+			- file = /var/log/httpd/access_log
+			- log stream_name = <mention-name>-{instance-id}
+			- log stream_group = /var/log/httpd/access_log
+
+		- sudo service awslogs start
+		- sudo vi /etc/awslogs/awslogs.conf
+			- [ /var/log/httpd/error_log
+			- file = /var/log/httpd/error_log
+			- log stream_name = <mention-name>-{instance-id}
+			- log stream_group = /var/log/httpd/error_log	
+
+	step 4 - create log filter 
+		   - go to aws cloudwatch console --> logs --> select aboved access_log or error_log
+		   - --> create metric filter --> get filter : enter here word which we want to find in Logs
+		   - assign metric --> give Namspace and metric name --> create filter 
+		   - create alarm of that filter 
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 SQS - SIMPLE QUEUE SERVICE - 
