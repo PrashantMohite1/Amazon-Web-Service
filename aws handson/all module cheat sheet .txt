@@ -415,7 +415,52 @@ imp terms while creating queue
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+ELASTIC BEANSTALK 
 
+Step to deploy application using beanstalk
+
+	step 1 - create application 
+	   - go to beanstalk console --> create application --> give name and tag --> done
+	   
+	 step 2 - create environment for created application
+	    - go to beanstalk console --> environments --> create new environment -: webserver - for static website
+	    									     worker evironment - for complex website
+	    -  --> give application name --> platform : choose the programming language --> configure more option -:
+		    									   - in that specify ec2 , sg , keypair , vpc , database
+	    - --> go previous from configure more configuration --> create application.
+	 
+	    
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
 
 
  
