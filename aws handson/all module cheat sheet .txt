@@ -375,6 +375,8 @@ aws cloudformation official documentation - https://docs.aws.amazon.com/AWSCloud
  
  IAM - IDENTITY ACCESS MANAGEMENT
  
+ handson notes are written in hand wriiten 
+ but please but in this sheet typing pending
  
  
  
