@@ -496,6 +496,14 @@ STEPS TO CREATE STACK
     - step 2 - stack creation 
     	- go to opswork console --> go to opswork stack --> add stacks --> create stack 
 	
+
+step to deploy our stack - 
+	- go to opswork --> stacks --> go to created stack 
+						--> instance --> start instance 
+						--> deployment --> deploy an app
+						
+	
+	
 	
 	
 	   
