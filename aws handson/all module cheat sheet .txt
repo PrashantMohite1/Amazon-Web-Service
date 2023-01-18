@@ -506,6 +506,38 @@ step to deploy our stack -
 	
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
+AWS GLOBAL ACCELERATOR 
+
+- go to global accelerator console --> create global accelerator --> enter name --> 
+					     			   - add listner : enter port which we want to allow
+					     			   - add endpoint group -: select here regions we want to add from which we select our LB , EC2's
+					     			   - add endpoints --> 
+					     	   			- endpoint type - select here what we want attach ec2/lb  ---> create accelerator
+					
+					
+					
+					
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 AWS ORGANIZATION 
 
 
