@@ -506,11 +506,28 @@ step to deploy our stack -
 	
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
+AWS ORGANIZATION 
+
+
+  step 1 - create a organisation 
+    - go to aws console --> click on your account name --> create organisation --> create
+    - 1st we should enable service control policy --: go to policies --> enable service control policies 
+    
+  step 2 - create an organization unit 
+ 	go to organization console --> aws accounts --> select root --> action --> create new --> enter name --> create
+
+  step 3 create a account or add existing account 
+	- go to organization console --> aws accounts --> add an account --> create new account --> enter mailid and create
+									     invite existing aws acct --> here we can invite the account to jo														join our organization
+									     
+	- select created account --> action --> move --> select oraganization unit 
+	
+   step 4 - create and assign policies 
+	- go to organization console --> policies --> create policy with required permissions 
+	- go to aws account --> go to organization unit --> policies --> attach the created policy 
+
 	   
-	   
-	   
-	   
-	   
+-------------------------------------------------------------------------------------------------------------------------------------------   
 	   
 	   
 	   
