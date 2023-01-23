@@ -1,0 +1,4 @@
+
+
+to create vpc
+# aws ec2 create-vpc --cidr-block 10.20.0.0/22 --region us-east-1
