@@ -1,4 +1,34 @@
 
+How to Create aws billing budget and alert 
+My billing dashboard --> budget -- create budget --> cost budget 
+					- setup budget type 
+						select budget type - recurring or expiring budget 
+						budget amount - fixed , enter your budget amount
+					- cofiugure alert
+						send alert based on - actual cost
+							actual cost - 80% email - xyz@gmail.com
+							forcasted cost - 80% email - xyz@gmail.com
+					- create
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 NACL SECURITY - for adding security for subnet , here explicit deny is awailable
 
   steps to create nacl 
