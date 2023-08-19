@@ -124,8 +124,8 @@ Application Load Balancer :
                    
   asg creation steps - follow sequence while creating 
   
-              1. AMI 
-              2. Launch configuration or launch template -                  # in template we define os , instance type , ebs for server while auto scaling
+              1. AMI - 							    # go to console --> instances --> right click on instance --> create image - give tag 
+              2. Launch configuration or launch template -                  # in template we define AMI, os , instance type , ebs for server while auto scaling
               3. load balancer
               4. start creating asg
               5. cloud watch alarm
